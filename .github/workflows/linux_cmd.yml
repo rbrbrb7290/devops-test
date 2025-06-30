@@ -1,0 +1,30 @@
+name: Linux Command Practice
+on:
+  push:
+    paths:
+      - '.github/workflows/linux_cmd.yaml'
+
+jobs:
+  run-commands:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 소스 코드 체크아웃
+        uses: actions/checkout@main
+
+      - name: 현재 디렉토리 확인(pwd)
+        run: pwd
+
+      - name: 디렉토리 내 파일 목록 확인(ls)
+        run: ls -la
+
+      - name: README 파일 내용 확인(cat)
+        run: cat Readme.md
+
+      - name: 특정 단어 검색(grep)
+        run: grep 'GitHub' Readme.md || echo "해당 단어가 없습니다."
+
+      - name: 환경 변수 확인(env)
+        run: env
+
+      - name: 날짜/시간 확인(date)
+        run: date

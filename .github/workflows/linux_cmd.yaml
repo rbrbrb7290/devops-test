@@ -18,7 +18,7 @@ jobs:
         run: ls -la
 
       - name: README 파일 내용 확인(cat)
-        run: cat Readme.md
+        run: cat README.md
 
       - name: 특정 단어 검색(grep)
         run: grep 'GitHub' Readme.md || echo "해당 단어가 없습니다."
